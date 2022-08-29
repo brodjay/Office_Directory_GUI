@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main %}        
+        <div class="row">
+            <div class="col text-center">
+                <h2>Enter id number to update.</h2>
+                <form action = "{{ url_for('update') }}" method="post">
+                    {{ form.csrv_token }}
+                    {{ form.id.label }}
+                    {{ form.id }}
+                    {{ form.submit }}
+                </form>
+                {% if form.id.data %}
+                    <h1>This is the data: {{ form.id.data }}</h1>
+                {% endif %}
+            </div>
+        </div>   
+{% endblock %}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
+</html>
