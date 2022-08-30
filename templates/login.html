@@ -2,7 +2,7 @@
 {% block main %}        
         <div class="row">
             <div class="col text-center">
-                <h2>Enter username.</h2>
+                <h2>Enter username to login:</h2>
                 <form action = "{{ url_for('login') }}" method="post">
                     {{ form.csrv_token }}
                     {{ form.username.label }}

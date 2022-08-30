@@ -9,9 +9,10 @@
                     {{ form.id }}
                     {{ form.submit }}
                 </form>
-                {% if form.id.data %}
-                    <h1>This is the data: {{ form.id.data }}</h1>
-                {% endif %}
+                <br><br>
+                {% for result in results %}
+                    <h1> {{ result }}</h1>                    
+                {% endfor %}             
             </div>
         </div>   
 {% endblock %}

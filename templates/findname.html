@@ -13,10 +13,8 @@
                     <br><br>
                     {{ form.submit }}
                 </form>
-                {% if form.firstname.data %}
-                    <h1>This is the data: {{ form.firstname.data }}</h1>
-                {% elif form.lastname.data %}
-                    <h1>This is the data: {{ form.lastname.data }}</h1>
+                {% if results %}
+                    <h1>These are your results {{ results }}</h1>                    
                 {% endif %}
             </div>
         </div>   

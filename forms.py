@@ -29,5 +29,5 @@ class DeleteUserForm(FlaskForm):
     submit = SubmitField('Search')
 
 class LoginUserForm(FlaskForm):
-    username = StringField('Enter username: ', validators=[DataRequired()])
+    username = StringField('Username: ', validators=[DataRequired()])
     submit = SubmitField('Login')
