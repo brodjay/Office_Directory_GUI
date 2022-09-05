@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_login.html' %}
 {% block main %}        
         <div class="row">
             <div class="col text-center">
@@ -6,11 +6,19 @@
                 <form action = "{{ url_for('login') }}" method="post">
                     {{ form.csrv_token }}
                     {{ form.username.label }}
-                    {{ form.username }}
+                    {{ form.username }}<br><br>
+                    {{ form.password.label }}
+                    {{ form.password }}<br><br>
                     {{ form.submit }}
                 </form>
-                {% if form.username.data %}
-                    <h1>This is the data: {{ form.username.data }}</h1>
+                {% if error %}            
+                    <div class="alert alert-danger" role="alert">
+                        <ul class=flashes>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
             </div>
         </div>   

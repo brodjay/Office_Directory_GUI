@@ -9,8 +9,18 @@
                     {{ form.id }}
                     {{ form.submit }}
                 </form>
-                {% if form.id.data %}
-                    <h1>This is the data: {{ form.id.data }}</h1>
+                {% if result %}
+                    <h2>Delete this record?: </h2>
+                    <h3>{{ result }}</h3>
+                    <form action="{{ url_for('delete') }}" method="post">
+                        <button type=submit name="delete" value="yes" class="btn btn-info">Yes</button>
+                        <button type=submit name="delete" value="no" class="btn btn-info">No</button>
+                    </form>
+                {% endif %}
+                
+                {% if rowcount %}
+                    <h3>Rows modified: {{ rowcount }}</h3>
+                    <h3>Record has been deleted!</h3>
                 {% endif %}
             </div>
         </div>   

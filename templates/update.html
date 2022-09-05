@@ -9,8 +9,31 @@
                     {{ form.id }}
                     {{ form.submit }}
                 </form>
-                {% if form.id.data %}
-                    <h1>This is the data: {{ form.id.data }}</h1>
+                {% if result %}
+                    <h2>Update this record?: </h2>
+                    <h3>{{ result }}</h3>
+                    <form action="{{ url_for('update') }}" method="post">
+                        <button type=submit name="update" value="yes" class="btn btn-info">Yes</button>
+                        <button type=submit name="update" value="no" class="btn btn-info">No</button>
+                    </form>
+                {% endif %}
+                {% if id %}
+                <br>
+                <form action = "{{ url_for('edit') }}" method="post">
+                    <p style="display:inline">ID: {{ id }}</p> <button type="submit" name="column" value="id" class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">First Name: {{ firstname }} </p><button type="submit" name="column" value="first_name"  class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">Last Name: {{ lastname }}</p><button type="submit" name="column" value="last_name" class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">Gender: {{ gender }} </p> <button type="submit" name="column" value="gender" class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">Email: {{ email }}</p> <button type="submit" name="column" value="email" class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">Username: {{ username }}</p><button type="submit" name="column" value="username"  class="btn btn-primary">Edit</button>
+                    <br><br>
+                    <p style="display:inline">IP Address: {{ ipaddress }}</p><button type="submit" name="column" value="ip_address" class="btn btn-primary">Edit</button>
+                </form>
                 {% endif %}
             </div>
         </div>   
