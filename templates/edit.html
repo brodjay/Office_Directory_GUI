@@ -2,18 +2,14 @@
 {% block main %}        
         <div class="row">
             <div class="col text-center">
-                <h2>Enter id number to search.</h2>
-                <form action = "{{ url_for('findid') }}" method="post">
+                <h2>Update {{ column_edit }} below:</h2>
+                <form action = "{{ url_for('edit') }}" method="post">
                     {{ form.csrv_token }}
-                    {{ form.id.label }}
-                    {{ form.id }}
+                    {{ form.update.label }}
+                    {{ form.update }}
                     {{ form.submit }}
-                </form>
-                <br><br>
-                {% for result in results %}
-                    <h1> {{ result }}</h1>                    
-                {% endfor %}             
-            </div>
+                </form>       
+            </div>    
         </div>   
 {% endblock %}
         </div>

@@ -15,6 +15,7 @@ class AddUserForm(FlaskForm):
     id = StringField('ID: ', validators=[DataRequired()])
     firstname = StringField('First Name: ', validators=[DataRequired()])
     lastname = StringField('Last Name: ', validators=[DataRequired()])
+    gender = StringField('Gender (male/female/non-binary): ', validators=[DataRequired()])
     email = StringField('Email: ', validators=[DataRequired()])
     username = StringField('Username: ', validators=[DataRequired()])
     ipaddress = StringField('IP Address ', validators=[DataRequired()])
@@ -24,10 +25,15 @@ class UpdateUserForm(FlaskForm):
     id = StringField('Enter id: ', validators=[DataRequired()])
     submit = SubmitField('Search')
 
+class EditUserForm(FlaskForm):
+    update = StringField('Update:', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
 class DeleteUserForm(FlaskForm):
     id = StringField('Enter id: ', validators=[DataRequired()])
     submit = SubmitField('Search')
 
 class LoginUserForm(FlaskForm):
-    username = StringField('Enter username: ', validators=[DataRequired()])
+    username = StringField('Username: ', validators=[DataRequired()])
+    password = StringField('Password: ', validators=[DataRequired()])
     submit = SubmitField('Login')

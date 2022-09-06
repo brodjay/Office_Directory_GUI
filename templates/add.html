@@ -16,6 +16,9 @@
                             {{ form.lastname.label }}
                             {{ form.lastname }}
                             <br><br>
+                            {{ form.gender.label }}
+                            {{ form.gender }}
+                            <br><br>
                             {{ form.email.label }}
                             {{ form.email }}
                             <br><br>
@@ -27,6 +30,13 @@
                             <br><br>
                             {{ form.submit }}
                         </form>
+                        {% if rowcount %}
+                            <p>Rows modified: {{ rowcount }} </p>
+                        {% endif %}
+                        {% if add_result %}
+                            <p>New User added: </p>
+                            {{ add_result }}
+                        {% endif %}
                     </div>
                 </div>
             </div>
