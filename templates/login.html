@@ -1,5 +1,12 @@
 {% extends 'base_login.html' %}
-{% block main %}        
+{% block main %}
+        {% if error %}            
+        <div class="alert alert-danger" role="alert">
+            <ul class=flashes>                
+                    <li>{{ error }}</li>
+            </ul>
+        </div>
+        {% endif %}
         <div class="row">
             <div class="col text-center">
                 <h2>Enter username to login:</h2>
@@ -11,15 +18,7 @@
                     {{ form.password }}<br><br>
                     {{ form.submit }}
                 </form>
-                {% if error %}            
-                    <div class="alert alert-danger" role="alert">
-                        <ul class=flashes>
-                            {% for message in messages %}
-                                <li>{{ message }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
+               
             </div>
         </div>   
 {% endblock %}
