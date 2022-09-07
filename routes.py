@@ -188,7 +188,7 @@ def delete():
             search_sql = "SELECT * FROM users WHERE id = %s"
             cursor.execute(search_sql, value)
             result = cursor.fetchall()              
-        if request.form.get("delete") == "yes":
+        elif request.form.get("delete") == "yes":
             retrieve_id_sql = "SELECT id FROM delete_table WHERE session = 1"
             cursor.execute(retrieve_id_sql)
             results = cursor.fetchall()
@@ -223,9 +223,8 @@ def login():
     error = None
     if request.method == 'POST':
         if form.username.data != 'admin' or \
-                form.password.data != 'admin':
+                form.password.data != 'adminadmin':
             error = 'Invalid credentials'
-            flash('Invalid credentials')
         else:
             flash('You were successfully logged in')
             return redirect(url_for('index'))

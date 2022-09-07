@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
-{% block main %}
-        
-        <div class="row">
-            <div class="col text-center d-grid gap-2 col-6 mx-auto">
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em"><a href="{{ url_for('findid') }}">Find by id</a></button>
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em"><a href="{{ url_for('findname') }}">Find by name</a></button>
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em"><a href="{{ url_for('add') }}">Add user</a></button>
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em"><a href="{{ url_for('update') }}">Update user</a></button>
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em"><a href="{{ url_for('delete') }}">Delete user</a></button>
-                <button type="button" class="btn btn-info btn-lg" style="margin-top: 5em; margin-bottom: 5em;"><a href="{{ url_for('logout') }}">Log Out</a></button>
+{% block main %}        
+            <div class="row index">         
+                <div class="col text-center">
+                    <a href="{{ url_for('findid') }}"><button type="button" class="btn btn-info menu">Find by id</button></a>
+                </div>
+                <div class="col text-center">
+                    <a href="{{ url_for('findname') }}"><button type="button" class="btn btn-info menu">Find by name</button></a>
+                </div>
+                <div class="col text-center">
+                    <a href="{{ url_for('add') }}"><button type="button" class="btn btn-info menu">Add user</button></a>
+                </div>
             </div>
-        </div>   
+            <div class="row index">
+                <div class="col text-center">
+                    <a href="{{ url_for('update') }}"><button type="button" class="btn btn-info menu">Update user</button></a>
+                </div>
+                <div class="col text-center">
+                    <a href="{{ url_for('delete') }}"><button type="button" class="btn btn-info menu">Delete user</button></a>
+                </div>
+                <div class="col text-center">
+                    <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-info menu">Log Out</button></a>
+                </div>            
+            </div>       
 {% endblock %}
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
